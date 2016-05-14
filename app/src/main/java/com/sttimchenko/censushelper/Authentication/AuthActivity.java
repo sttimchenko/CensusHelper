@@ -4,13 +4,17 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.sttimchenko.censushelper.R;
 
-public class AuthActivity extends AppCompatActivity implements AuthView, View.OnClickListener {
+public class AuthActivity extends AppCompatActivity implements AuthView, View.OnClickListener
+        , TextView.OnEditorActionListener {
     private AuthPresenter presenter;
     private AuthViewHolder holder;
 
@@ -38,6 +42,7 @@ public class AuthActivity extends AppCompatActivity implements AuthView, View.On
     protected void onResume() {
         super.onResume();
         holder.button.setOnClickListener(this);
+        holder.etPassword.setOnEditorActionListener(this);
     }
 
     @Override
@@ -87,5 +92,15 @@ public class AuthActivity extends AppCompatActivity implements AuthView, View.On
                 presenter.onLoginButtonClicked();
                 break;
         }
+    }
+
+    @Override
+    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+        if (actionId == EditorInfo.IME_ACTION_DONE){
+            presenter.onLoginButtonClicked();
+            return true;
+        }
+
+        return false;
     }
 }

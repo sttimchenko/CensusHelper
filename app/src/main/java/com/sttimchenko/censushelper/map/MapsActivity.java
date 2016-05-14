@@ -1,4 +1,4 @@
-package com.sttimchenko.censushelper;
+package com.sttimchenko.censushelper.map;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,6 +10,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.sttimchenko.censushelper.R;
 
 /**
  * Created by Stanislav on 14.05.2016.

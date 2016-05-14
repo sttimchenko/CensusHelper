@@ -3,6 +3,9 @@ package com.sttimchenko.censushelper.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.sttimchenko.censushelper.database.contracts.AimsTableContract;
+import com.sttimchenko.censushelper.database.contracts.ResponseseTableContract;
+
 /**
  * Created by Stanislav on 14.05.2016.
  */
@@ -14,6 +17,8 @@ public class CensusDatabase extends Database {
                     + AimsTableContract.STREET_NAME + " TEXT NOT NULL, "
                     + AimsTableContract.BUILDING_NUMBER + " INTEGER NOT NULL, "
                     + AimsTableContract.FLAT_NUMBER + " INTEGER, "
+                    + AimsTableContract.LAT + " REAL NOT NULL, "
+                    + AimsTableContract.LONG + " REAL NOT NULL, "
                     + ");";
 
     public static final String CREATE_TABLE_RESPONSES =

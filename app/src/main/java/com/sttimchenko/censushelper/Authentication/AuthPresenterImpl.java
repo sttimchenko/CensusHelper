@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.sttimchenko.censushelper.MapsActivity;
+import com.sttimchenko.censushelper.map.MapsActivity;
 import com.sttimchenko.censushelper.model.LoginResponse;
 
 import rx.functions.Action1;

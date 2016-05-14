@@ -1,4 +1,4 @@
-package com.sttimchenko.censushelper.database;
+package com.sttimchenko.censushelper.database.contracts;
 
 import android.provider.BaseColumns;
 

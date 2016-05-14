@@ -1,4 +1,4 @@
-package com.sttimchenko.censushelper.database;
+package com.sttimchenko.censushelper.database.contracts;
 
 import android.provider.BaseColumns;
 
@@ -11,4 +11,6 @@ public interface AimsTableContract extends BaseColumns {
     String STREET_NAME = "street_name";
     String BUILDING_NUMBER = "building_number";
     String FLAT_NUMBER = "flat_number";
+    String LAT = "lat";
+    String LONG = "long";
 }
