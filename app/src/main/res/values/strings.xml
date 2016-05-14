@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Census Helper</string>
-    <string name="title_activity_maps">Map</string>
+    <string name="error_username">Невірний логін</string>
+    <string name="error_password">Невірний пароль</string>
+    <string name="login">Логін</string>
+    <string name="password">Пароль</string>
+    <string name="welcome_text">Увійдіть до системи згідно Вашого акаунту волонтера</string>
 </resources>
