@@ -5,4 +5,88 @@
     <string name="login">Логін</string>
     <string name="password">Пароль</string>
     <string name="welcome_text">Увійдіть до системи згідно Вашого акаунту волонтера</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="private_house">Приватний будинок</string>
+    <string name="public_house">Багатоквартирний будинок</string>
+    <string name="living_conditions">Житлові умови</string>
+    <string name="working_status">Зайнятість</string>
+    <string name="income_source">Джерело засобів існування</string>
+    <string name="education">Освіта</string>
+    <string name="nationality">Громадянство</string>
+    <string name="language">Мова</string>
+    <string name="ethnicity">Етнічне пожодження</string>
+    <string name="family_status">Сімейний стан</string>
+    <string name="birthplace">Місце народження</string>
+    <string name="birthday">Дата народження</string>
+    <string name="age">Вік</string>
+    <string name="woman">Жіноча</string>
+    <string name="man">Чоловіча</string>
+    <string name="gender">Стать</string>
+
+    <string-array name="family_status">
+        <item>Незаміжня/Незаміжній</item>
+        <item>Розлучена/Розлучений</item>
+        <item>Заміжня/Одружений</item>
+    </string-array>
+
+    <string-array name="education">
+        <item>Основна середня</item>
+        <item>Повна середня</item>
+        <item>Спеціальна середня</item>
+        <item>Незакінчена вища</item>
+        <item>Вища</item>
+        <item>Кандидат наук</item>
+        <item>Доктор наук</item>
+    </string-array>
+
+    <string-array name="work_status">
+        <item>Держслужбовець</item>
+        <item>Тимчасово безробітній</item>
+        <item>Пенсіонер</item>
+        <item>Учень</item>
+        <item>Студент</item>
+        <item>Дошкільний вік</item>
+        <item>Приватний підприємець</item>
+        <item>Найманий робітник</item>
+    </string-array>
+
+    <string-array name="ethnicity">
+        <item>Українка/Українець</item>
+        <item>Росіянка/Росіянин</item>
+        <item>Білоруска/Білорус</item>
+        <item>Татарка/Татарин</item>
+        <item>Полячка/Поляк</item>
+        <item>Руминка/Румин</item>
+        <item>Молдаванка/Молдаван</item>
+        <item>Грузинка/Грузин</item>
+    </string-array>
+
+    <string-array name="language">
+        <item>Українська</item>
+        <item>Російська</item>
+        <item>Польска</item>
+        <item>Іврит</item>
+        <item>Грузинська</item>
+        <item>Арабська</item>
+    </string-array>
+
+    <string-array name="nationality">
+        <item>Українка/Українець</item>
+        <item>Росіянка/Росіянин</item>
+        <item>Білоруска/Білорус</item>
+        <item>Полячка/Поляк</item>
+        <item>Руминка/Румин</item>
+        <item>Молдаванка/Молдаван</item>
+        <item>Грузинка/Грузин</item>
+    </string-array>
+
+    <string-array name="incomes">
+        <item>Пенсія</item>
+        <item>Депозити</item>
+        <item>Заощадження</item>
+        <item>Зарплатня</item>
+        <item>Прибуток</item>
+        <item>Нарахування</item>
+    </string-array>
+
 </resources>
