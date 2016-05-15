@@ -75,7 +75,8 @@ public class FormActivity extends AppCompatActivity implements FormView, View.On
 
         setSupportActionBar(holder.toolbar);
         if (getSupportActionBar() != null){
-            getSupportActionBar().setDisplayShowTitleEnabled(false);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
         familyStatuses = getResources().getStringArray(R.array.family_status);
@@ -118,7 +119,10 @@ public class FormActivity extends AppCompatActivity implements FormView, View.On
                 saveData(true);
                 super.onBackPressed();
                 break;
-        }
+            case android.R.id.home:
+                onBackPressed();
+                break;
+            }
 
         return super.onOptionsItemSelected(item);
     }

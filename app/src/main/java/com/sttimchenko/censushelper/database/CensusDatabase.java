@@ -77,7 +77,7 @@ public class CensusDatabase extends Database {
             Cursor c = databaseHelper.getReadableDatabase().query(AimsTableContract.TABLE_NAME, new String[]{AimsTableContract.FLAT_NUMBERS}
                     , AimsTableContract._ID + " = ?", new String[]{id + ""}, null, null, null);
 
-            if (c != null){
+            if (c != null && c.moveToNext()){
                 List<String> list = Utils.splitToList(c.getString(c.getColumnIndexOrThrow(AimsTableContract.FLAT_NUMBERS)), ",");
 
                 list.remove(String.valueOf(flatNumber));

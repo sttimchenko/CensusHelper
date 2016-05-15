@@ -36,7 +36,6 @@ public class AimsFragment extends Fragment implements AimsView, AimsAdapter.OnIt
         presenter = new AimsPresenterImpl(this, model);
 
         presenter.onCreate(getActivity(), savedInstanceState);
-        presenter.requestAdapterData();
 
         return view;
     }

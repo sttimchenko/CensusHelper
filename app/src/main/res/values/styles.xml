@@ -17,8 +17,9 @@
         <item name="android:paddingRight">2dp</item>
     </style>
 
-    <style name="ToolbarTheme" parent="AppTheme">
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
         <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="colorControlNormal">@android:color/white</item>
     </style>
 
 </resources>

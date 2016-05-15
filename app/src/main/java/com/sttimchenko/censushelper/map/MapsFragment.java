@@ -50,6 +50,10 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback, View.O
 
         MapsInitializer.initialize(this.getActivity());
 
+        InfoWindowAdapter adapter = new InfoWindowAdapter(getContext());
+
+//        mMap.setInfoWindowAdapter(adapter);
+
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
