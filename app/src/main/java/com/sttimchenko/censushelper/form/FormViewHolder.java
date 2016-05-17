@@ -24,11 +24,11 @@ public class FormViewHolder {
     protected EditText etLivingConditions;
     protected FloatingActionButton fab;
 
-    public FormViewHolder(Toolbar toolbar, RadioButton rbMan, RadioButton rbWoman, EditText etAge
-            , EditText etBirthday, EditText etBirthplace, Spinner spFamilyStatus
-            , AutoCompleteTextView acEthnicity, AutoCompleteTextView acLanguage
-            , AutoCompleteTextView acNationality, Spinner spEducation, AutoCompleteTextView acIncomes
-            , Spinner spWorkStatus, EditText etLivingConditions, FloatingActionButton fab) {
+    public FormViewHolder(Toolbar toolbar, RadioButton rbMan, RadioButton rbWoman
+            , EditText etAge, EditText etBirthday, EditText etBirthplace, Spinner spFamilyStatus
+            , AutoCompleteTextView acEthnicity, AutoCompleteTextView acLanguage, AutoCompleteTextView acNationality
+            , Spinner spEducation, AutoCompleteTextView acIncomes, Spinner spWorkStatus, EditText etLivingConditions
+            , FloatingActionButton fab) {
         this.toolbar = toolbar;
         this.rbMan = rbMan;
         this.rbWoman = rbWoman;
@@ -44,5 +44,13 @@ public class FormViewHolder {
         this.spWorkStatus = spWorkStatus;
         this.etLivingConditions = etLivingConditions;
         this.fab = fab;
+    }
+
+    public boolean isWidgetsEmpty(){
+        return (rbMan.isChecked() || rbWoman.isChecked()) && etAge.getText().toString().isEmpty()
+                && etAge.getText().toString().isEmpty() && etBirthplace.getText().toString().isEmpty()
+                && acEthnicity.getText().toString().isEmpty() && acLanguage.getText().toString().isEmpty()
+                && acNationality.getText().toString().isEmpty() && acIncomes.getText().toString().isEmpty()
+                && etLivingConditions.getText().toString().isEmpty();
     }
 }

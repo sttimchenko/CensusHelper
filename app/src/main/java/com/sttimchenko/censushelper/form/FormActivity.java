@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -20,6 +21,7 @@ import android.widget.Spinner;
 
 import com.sttimchenko.censushelper.Constants;
 import com.sttimchenko.censushelper.R;
+import com.sttimchenko.censushelper.Utils;
 
 import java.util.Calendar;
 
@@ -86,7 +88,7 @@ public class FormActivity extends AppCompatActivity implements FormView, View.On
         presenter.onCreate(this, savedInstanceState);
 
         initSpinners();
-        initAucompletes();
+        initAutocompleteViews();
     }
 
     @Override
@@ -182,7 +184,7 @@ public class FormActivity extends AppCompatActivity implements FormView, View.On
         holder.spWorkStatus.setAdapter(adapter);
     }
 
-    private void initAucompletes(){
+    private void initAutocompleteViews(){
         String [] arr = getResources().getStringArray(R.array.ethnicity);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.select_dialog_item, arr);
         holder.acEthnicity.setAdapter(adapter);
@@ -205,22 +207,26 @@ public class FormActivity extends AppCompatActivity implements FormView, View.On
     }
 
     private void saveData(boolean isLast){
-        presenter.saveData(
-                holder.rbMan.isChecked() ? "Чоловік" : "Жінка",
-                Integer.valueOf(holder.etAge.getText().toString()),
-                calendar.getTimeInMillis(),
-                holder.etBirthplace.getText().toString(),
-                familyStatuses[holder.spFamilyStatus.getSelectedItemPosition()],
-                holder.acEthnicity.getText().toString(),
-                holder.acLanguage.getText().toString(),
-                holder.acNationality.getText().toString(),
-                education[holder.spEducation.getSelectedItemPosition()],
-                holder.acIncomes.getText().toString(),
-                workStatuses[holder.spWorkStatus.getSelectedItemPosition()],
-                holder.etLivingConditions.getText().toString(),
-                isLast
-                , aimId
-                , flatNumber
-        );
+        if (holder.isWidgetsEmpty()){
+            presenter.saveData(
+                    holder.rbMan.isChecked() ? "Чоловік" : "Жінка",
+                    Integer.valueOf(holder.etAge.getText().toString()),
+                    calendar.getTimeInMillis(),
+                    holder.etBirthplace.getText().toString(),
+                    familyStatuses[holder.spFamilyStatus.getSelectedItemPosition()],
+                    holder.acEthnicity.getText().toString(),
+                    holder.acLanguage.getText().toString(),
+                    holder.acNationality.getText().toString(),
+                    education[holder.spEducation.getSelectedItemPosition()],
+                    holder.acIncomes.getText().toString(),
+                    workStatuses[holder.spWorkStatus.getSelectedItemPosition()],
+                    holder.etLivingConditions.getText().toString(),
+                    isLast
+                    , aimId
+                    , flatNumber
+            );
+        } else {
+            Utils.showSnackbar(holder.fab, "Заповніть усі поля", Snackbar.LENGTH_LONG);
+        }
     }
 }

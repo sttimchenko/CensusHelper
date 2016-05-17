@@ -1,5 +1,8 @@
 package com.sttimchenko.censushelper;
 
+import android.support.design.widget.Snackbar;
+import android.view.View;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -27,5 +30,9 @@ public class Utils {
         }
 
         return result.toString();
+    }
+
+    public static void showSnackbar(View view, String text, int length){
+        Snackbar.make(view, text, length).show();
     }
 }

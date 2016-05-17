@@ -1,6 +1,6 @@
 package com.sttimchenko.censushelper.model;
 
-public class Response {
+public class FormResponse {
     private String gender;
     private int age;
     private long birthday;

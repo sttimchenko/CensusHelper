@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.sttimchenko.censushelper.Utils;
 import com.sttimchenko.censushelper.database.contracts.AimsTableContract;
 import com.sttimchenko.censushelper.database.contracts.ResponseseTableContract;
-import com.sttimchenko.censushelper.model.Response;
+import com.sttimchenko.censushelper.model.FormResponse;
 
 import java.util.List;
 
@@ -53,19 +53,24 @@ public class CensusDatabase extends Database {
                 , null, null, null, null, null);
     }
 
-    public void writeResponse(Response response){
+    public Cursor getResponses(){
+        return databaseHelper.getReadableDatabase().query(ResponseseTableContract.TABLE_NAME, null
+                , null, null, null, null, null);
+    }
+
+    public void writeResponse(FormResponse formResponse){
         ContentValues cv = new ContentValues();
 
-        cv.put(ResponseseTableContract.AGE, response.getAge());
-        cv.put(ResponseseTableContract.BIRTH_DATE, response.getBirthday());
-        cv.put(ResponseseTableContract.BIRTH_PLACE, response.getBirthplace());
-        cv.put(ResponseseTableContract.EDUCATION, response.getEducation());
-        cv.put(ResponseseTableContract.ETHNICITY, response.getEthnicity());
-        cv.put(ResponseseTableContract.FAMILY_STATUS, response.getFamilyStatus());
-        cv.put(ResponseseTableContract.GENDER, response.getGender());
-        cv.put(ResponseseTableContract.INCOME_SOURCES, response.getIncomes());
-        cv.put(ResponseseTableContract.SPOKEN_LANGUAGE, response.getLanguage());
-        cv.put(ResponseseTableContract.LIVING_CONDITIONS, response.getLivingConditions());
+        cv.put(ResponseseTableContract.AGE, formResponse.getAge());
+        cv.put(ResponseseTableContract.BIRTH_DATE, formResponse.getBirthday());
+        cv.put(ResponseseTableContract.BIRTH_PLACE, formResponse.getBirthplace());
+        cv.put(ResponseseTableContract.EDUCATION, formResponse.getEducation());
+        cv.put(ResponseseTableContract.ETHNICITY, formResponse.getEthnicity());
+        cv.put(ResponseseTableContract.FAMILY_STATUS, formResponse.getFamilyStatus());
+        cv.put(ResponseseTableContract.GENDER, formResponse.getGender());
+        cv.put(ResponseseTableContract.INCOME_SOURCES, formResponse.getIncomes());
+        cv.put(ResponseseTableContract.SPOKEN_LANGUAGE, formResponse.getLanguage());
+        cv.put(ResponseseTableContract.LIVING_CONDITIONS, formResponse.getLivingConditions());
 
         databaseHelper.getWritableDatabase().insert(ResponseseTableContract.TABLE_NAME, null, cv);
     }

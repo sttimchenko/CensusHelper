@@ -52,7 +52,7 @@ public class AimsDataMapper {
         aim.setFlatsNumbers(Utils.splitToList(cursor.getString(cursor.getColumnIndexOrThrow(AimsTableContract.FLAT_NUMBERS)), ","));
 
         LatLng latLng = new LatLng(cursor.getDouble(cursor.getColumnIndexOrThrow(AimsTableContract.LAT))
-                , cursor.getDouble(cursor.getColumnIndexOrThrow(AimsTableContract.STREET_NAME)));
+                , cursor.getDouble(cursor.getColumnIndexOrThrow(AimsTableContract.LONG)));
         aim.setCordinates(latLng);
 
         return aim;

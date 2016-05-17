@@ -2,9 +2,9 @@ package com.sttimchenko.censushelper.form;
 
 import android.content.Context;
 
-import com.sttimchenko.censushelper.model.Response;
+import com.sttimchenko.censushelper.model.FormResponse;
 
 public interface FormModel {
-    void saveDataAndDeleteAim(Context context, Response response, int id, int flat);
-    void saveData(Context context, Response response);
+    void saveDataAndDeleteAim(Context context, FormResponse formResponse, int id, int flat);
+    void saveData(Context context, FormResponse formResponse);
 }

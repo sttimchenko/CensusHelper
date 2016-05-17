@@ -3,7 +3,7 @@ package com.sttimchenko.censushelper.form;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.sttimchenko.censushelper.model.Response;
+import com.sttimchenko.censushelper.model.FormResponse;
 
 public class FormPresenterImpl implements FormPresenter {
     private FormView view;
@@ -21,26 +21,26 @@ public class FormPresenterImpl implements FormPresenter {
             , String ethnicity, String language, String nationality, String education, String incomes
             , String workStatus, String livingConditions, boolean isLast, int id, int flat) {
 
-        Response response = new Response();
+        FormResponse formResponse = new FormResponse();
 
-        response.setGender(gender);
-        response.setAge(age);
-        response.setBirthday(birthday);
-        response.setBirthplace(birthplace);
-        response.setFamilyStatus(familyStatus);
-        response.setEthnicity(ethnicity);
-        response.setLanguage(language);
-        response.setNationality(nationality);
-        response.setEducation(education);
-        response.setIncomes(incomes);
-        response.setWorkStatus(workStatus);
-        response.setLivingConditions(livingConditions);
+        formResponse.setGender(gender);
+        formResponse.setAge(age);
+        formResponse.setBirthday(birthday);
+        formResponse.setBirthplace(birthplace);
+        formResponse.setFamilyStatus(familyStatus);
+        formResponse.setEthnicity(ethnicity);
+        formResponse.setLanguage(language);
+        formResponse.setNationality(nationality);
+        formResponse.setEducation(education);
+        formResponse.setIncomes(incomes);
+        formResponse.setWorkStatus(workStatus);
+        formResponse.setLivingConditions(livingConditions);
 
         if (isLast){
-            model.saveDataAndDeleteAim(activity, response, id, flat);
+            model.saveDataAndDeleteAim(activity, formResponse, id, flat);
             view.onBackPressed();
         } else {
-            model.saveData(activity, response);
+            model.saveData(activity, formResponse);
             view.clearView();
         }
     }

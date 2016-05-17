@@ -4,23 +4,23 @@ import android.content.Context;
 
 import com.sttimchenko.censushelper.database.CensusDatabase;
 import com.sttimchenko.censushelper.database.DatabaseFactory;
-import com.sttimchenko.censushelper.model.Response;
+import com.sttimchenko.censushelper.model.FormResponse;
 
 public class FormModelImpl implements FormModel {
     private CensusDatabase database;
 
     @Override
-    public void saveDataAndDeleteAim(Context context, Response response, int id, int flat) {
+    public void saveDataAndDeleteAim(Context context, FormResponse formResponse, int id, int flat) {
         if (database == null) database = DatabaseFactory.get(context).getCensusDatabase();
 
-        database.writeResponse(response);
+        database.writeResponse(formResponse);
         database.deleteAim(id, flat);
     }
 
     @Override
-    public void saveData(Context context, Response response) {
+    public void saveData(Context context, FormResponse formResponse) {
         if (database == null) database = DatabaseFactory.get(context).getCensusDatabase();
 
-        database.writeResponse(response);
+        database.writeResponse(formResponse);
     }
 }
